@@ -1,0 +1,37 @@
+package org.mentoritos.elearning.users;
+
+import java.util.ArrayList;
+import org.springframework.stereotype.Service;
+
+@Service
+public class StudentService {
+	public final ArrayList<Student> studentsList = new ArrayList<Student>();
+	
+	public StudentService() {
+		studentsList.add(new Student("123-sag", "Lorena", "Camacho Hernández", null, "Guadalajara", "33-1243-5674", "lorena.png", "Ahdash lirugds aoihdaosida aeora.", "Arte", "Pintura, yoga", null));
+		
+		studentsList.add(new Student("323-frs", "Carlos", "Perez García", null, "Zapopan", "33-1232-5544", "carlos.png", "Sohfieu eirugeiug lwiuerwei qiwuhiwueh roiorigj.", "UDG", "Teatro, correr", null));
+	}
+	
+	public ArrayList<Student> getStudents() {
+		return studentsList;
+	}
+	
+	public Student getStudent(int idStudent) {
+		for (Student student : studentsList) {
+			if (student.getIdStudent() == idStudent)
+				return student;
+		}
+		return null;
+	}
+	
+	public void deleteStudent(int idStudent) {
+		for (Student student : studentsList) {
+			if (student.getIdStudent() == idStudent) {
+				studentsList.remove(student);
+				break;
+			}
+				
+		}
+	}
+}

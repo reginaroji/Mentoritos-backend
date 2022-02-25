@@ -1,0 +1,5 @@
+package org.mentoritos.elearning.users;
+
+public class StudentProfileController {
+
+}

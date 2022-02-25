@@ -1,0 +1,17 @@
+package org.mentoritos.elearning.users;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
+
+public class Student extends UserInfo {
+	private String uid;
+	private int idStudentProfile;
+	private String description;
+	private String education;
+	private String interests;
+
+	
+	
+	
+}

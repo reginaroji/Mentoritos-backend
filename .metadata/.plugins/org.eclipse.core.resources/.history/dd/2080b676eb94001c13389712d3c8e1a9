@@ -1,0 +1,14 @@
+package org.mentoritos.elearning.users;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class StudentService {
+	public final ArrayList<StudentProfile> studentsList = new ArrayList<StudentProfile>();
+	
+	public StudentService() {
+		studentsList.add(new StudentProfile(0, null, null, null, null, 0, null, null, null, null, null, null, null, 0, null, null, null));
+	}
+}

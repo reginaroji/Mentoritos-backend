@@ -1,0 +1,42 @@
+package org.mentoritos.elearning.users;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
+
+public class Student {
+	private int idStudent;
+	private String uid;
+	private String name;
+	private String lastname;
+	private LocalDate birthday;
+	private String location;	
+	private String phone;
+	private String imageProfile;
+	private String about;
+	private String education;
+	private String interests;
+	private LocalDateTime registration;
+	
+	
+	public Student(int idStudent, String uid, String name, String lastname, LocalDate birthday, String location,
+			String phone, String imageProfile, String about, String education, String interests,
+			LocalDateTime registration) {
+		super();
+		this.idStudent = idStudent;
+		this.uid = uid;
+		this.name = name;
+		this.lastname = lastname;
+		this.birthday = birthday;
+		this.location = location;
+		this.phone = phone;
+		this.imageProfile = imageProfile;
+		this.about = about;
+		this.education = education;
+		this.interests = interests;
+		this.registration = registration;
+	}
+	
+	
+	
+}

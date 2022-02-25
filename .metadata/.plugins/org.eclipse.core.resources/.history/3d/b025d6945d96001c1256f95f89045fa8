@@ -1,0 +1,5 @@
+package org.generation.mentoritos.model;
+
+public interface StudentModel {
+
+}

@@ -1,0 +1,37 @@
+package org.mentoritos.elearning.users;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class StudentService {
+	public final ArrayList<Student> studentsList = new ArrayList<Student>();
+	
+	public StudentService() {
+		studentsList.add(new Student(1, null, "lorena@gmail.com", "156dferb", "68574-esrt", 1, "Lorena", "Hernández", "lorena.jpg", "Zapopan", null, "33-5624-8912", null, 1, "ewrgfewr kweyrkw wevbjfhdgb ewrt.", "CETI", "Pintar, Correr"));
+		studentsList.add(new Student(2, null, "carlos@gmail.com", "156dferb", "68574-esrt", 2, "Carlos", "Perez", "carlos.jpg", "Tonalá", null, "33-7410-9632", null, 2, "wqen dsjhfg ewra dgdfsgfdg ewr fgf.", "Música", "Tocar el piano"));
+	}
+	
+	public ArrayList<Student> getMentors() {
+		return studentsList;
+	}
+	
+	public Student getStudentProfile(int idStudentProfile) {
+		for (Student studentProfile : studentsList) {
+			if (studentProfile.getIdStudentProfile() == idStudentProfile)
+				return studentProfile;
+		}
+		return null;
+	}
+	
+	public void deleteStudent(int idStudentProfile) {
+		for (Student studentProfile : studentsList) {
+			if (studentProfile.getIdStudentProfile() == idStudentProfile) {
+				studentsList.remove(studentProfile);
+				break;
+			}
+				
+		}
+	}
+}
