@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.generation.mentoritosdb.model.Schedule;
-import org.generation.mentoritosdb.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,11 +37,14 @@ public class ScheduleService {
 		}//else
 	}//ADD
 
-	public void updateSchedule(Long idSchedule, int hour, int idMentor, int dayWeek) {
+	public void updateSchedule(Long idSchedule, 
+			int hour, 
+			//int idMentor, 
+			int dayWeek) {
 		if(scheduleRepository.existsById(idSchedule)) {
 			Schedule schedule = scheduleRepository.getById(idSchedule);
 			if (hour != 0) schedule.setHour(hour);
-			if (idMentor != 0) schedule.setIdMentor(idMentor);
+			//if (idMentor != 0) schedule.setIdMentor(idMentor);
 			if (dayWeek != 0) schedule.setDayWeek(dayWeek);
 			
 			scheduleRepository.save(schedule);

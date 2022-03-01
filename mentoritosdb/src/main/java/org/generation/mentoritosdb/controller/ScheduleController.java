@@ -1,11 +1,8 @@
 package org.generation.mentoritosdb.controller;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.generation.mentoritosdb.model.Schedule;
-import org.generation.mentoritosdb.model.Student;
 import org.generation.mentoritosdb.service.ScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -49,7 +45,10 @@ public class ScheduleController {
 			int hour, 
 			int idMentor, 
 			int dayWeek) {
-		scheduleService.updateSchedule(idSchedule, hour, idMentor, dayWeek);
+		scheduleService.updateSchedule(idSchedule, 
+				hour, 
+				//idMentor, 
+				dayWeek);
 	}//PUT - All items are required
 	
 }//class ScheduleController
