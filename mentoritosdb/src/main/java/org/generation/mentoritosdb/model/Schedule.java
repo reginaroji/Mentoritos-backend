@@ -1,6 +1,4 @@
 package org.generation.mentoritosdb.model;
-//Java code to implement calendar.get() function
-import java.util.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
