@@ -1,0 +1,5 @@
+package org.generation.mentoritosdbb.service;
+
+public class MentorshipService {
+
+}

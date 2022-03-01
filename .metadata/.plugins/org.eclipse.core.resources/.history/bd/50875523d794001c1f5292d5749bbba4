@@ -1,8 +1,0 @@
-package org.mentoritos.elearning.users;
-
-public class UsersProfile {
-	private int idUserProfileStudy;
-	private String description;
-	private String education;
-	private String interests;
-}
