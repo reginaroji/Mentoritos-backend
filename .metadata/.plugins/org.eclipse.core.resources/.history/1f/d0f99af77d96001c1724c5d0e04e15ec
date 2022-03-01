@@ -1,0 +1,49 @@
+package org.generation.mentoritos.service;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.generation.mentoritos.model.Student;
+import org.springframework.stereotype.Service;
+
+@Service
+public class StudentService {
+	private final StudentRepository studentRepository;
+	
+	public StudentService(StudentRepository studentRepository) {
+		this.studentRepository = studentRepository;
+	}
+
+	public List<Student> getStudents() {
+		return studentRepository.findAll();
+	}
+
+	public Student getStudent(Long idstudent) {
+		return studentRepository.findById(idstudent).orElseThrow(() -> new IllegalStateException("El estudiante con el id " + prodId + " no existe."));
+	}
+
+	public void deleteStudent(Long idstudent) {
+		if(studentRepository.existsById(idstudent))
+			studentRepository.deleteById(idstudent);	
+	}
+
+	public void addStudent(Student student) {
+		Optional<Producto> prodByName = studentRepository.findByNombre(student.getNombre());
+		if(prodByName.isPresent()) { //isPresent pregunta si ya existe en la tabla este producto
+			throw new IllegalStateException("El producto con el nombre [" + student.getNombre() + "] ya existe.");
+		}
+		else {
+			studentRepository.save(student);
+		}
+	}
+
+	public void updateStudent(Long idStudent, String uid, String name, String lastname, LocalDate birthday,
+			String location, String phone, String imageProfile, String about, String education, String interests,
+			LocalDateTime registration) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

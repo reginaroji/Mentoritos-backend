@@ -1,0 +1,42 @@
+package org.generation.mentoritos.service;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.generation.mentoritos.model.Student;
+import org.springframework.stereotype.Service;
+
+@Service
+public class StudentService {
+	private final StudentRepository studentRepository;
+
+	public List<Student> getStudents() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Student getStudent(Long idstudent) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void deleteStudent(Long idstudent) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void addstudent(Student student) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void updateStudent(Long idStudent, String uid, String name, String lastname, LocalDate birthday,
+			String location, String phone, String imageProfile, String about, String education, String interests,
+			LocalDateTime registration) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}
