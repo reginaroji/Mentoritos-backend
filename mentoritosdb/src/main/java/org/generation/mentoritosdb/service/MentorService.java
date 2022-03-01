@@ -1,5 +1,7 @@
 package org.generation.mentoritosdb.service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import org.generation.mentoritosdb.model.Mentor;
@@ -30,23 +32,21 @@ public class MentorService {
 	}//deleteMentor
 
 	public void addMentor(Mentor mentor) {
-		Optional<Mentor> mentorByEmail = mentorRepository.findByEmail(mentor.getEmail());
-		if (mentorByEmail.isPresent()) {
+		Optional<Mentor> mentorByUID = mentorRepository.findByUID(mentor.getUid());
+		if (mentorByUID.isPresent()) {
 			throw new IllegalStateException("Este correo "
-					+ "[" + mentor.getEmail() + "] ya ha sido registrado.");
+					+ "[" + mentor.getUid() + "] ya ha sido registrado.");
 		}else {
 			mentorRepository.save(mentor);
 		}//else //if				
 	}//addMentor
 
-	public void updateMentor(Integer id_mentor, String name, String lastname, String email, String password, String about, String education, String location, String image_profile, String phone, String birthdate, String register_date, String uid, Integer id_subject, String modality, String video) {
+	public void updateMentor(Integer id_mentor, String name, String lastname, String email, String password, String about, String education, String location, String image_profile, String phone, LocalDate birthdate, LocalDateTime register_date, String uid, Integer id_subject, String modality, String video) {
 		if (mentorRepository.existsById(id_mentor)) { 
 			Mentor m = mentorRepository.getById(id_mentor);
 			if (id_mentor != null) m.setId_mentor(id_mentor); 
 			if (name != null) m.setName(name); 
 			if (lastname != null) m.setLastname(lastname);
-			if (email != null) m.setEmail(email);
-			if (password != null) m.setPassword(password); 
 			if (about != null) m.setAbout(about);
 			if (education != null) m.setEducation(education);
 			if (location != null) m.setLocation(location); 

@@ -1,5 +1,8 @@
 package org.generation.mentoritosdb.model;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,8 +21,8 @@ public class Mentor extends User {
     private String modality;
     private String video;
 
-    public Mentor(String name, String lastname, String email, String password, String about, String education, String location, String image_profile, String phone, String birthdate, String register_date, String uid, Integer id_mentor, Integer id_subject, String modality, String video) {
-        super(name, lastname, email, password, about, education, location, image_profile, phone, birthdate, register_date, uid);
+    public Mentor(String name, String lastname, String email, String password, String about, String education, String location, String image_profile, String phone, LocalDate birthdate, LocalDateTime register_date, String uid, Integer id_mentor, Integer id_subject, String modality, String video) {
+        super(name, lastname, about, education, location, image_profile, phone, birthdate, register_date, uid);
         this.id_mentor = id_mentor;
         this.id_subject = id_subject;
         this.modality = modality;

@@ -1,27 +1,26 @@
 package org.generation.mentoritosdb.model;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass // ayuda a crear la herencia de la clase
 public class User {
     private String  name;
     private String lastname;
-    private String email;
-    private String password;
     private String about;
     private String education;
     private String location;
     private String image_profile;
     private String phone;
-    private String birthdate;
-    private String register_date;
+    private LocalDate birthdate;
+    private LocalDateTime register_date;
     private String uid;
 
-    public User(String name, String lastname, String email, String password, String about, String education, String location, String image_profile, String phone, String birthdate, String register_date, String uid) {
+    public User(String name, String lastname, String about, String education, String location, String image_profile, String phone, LocalDate birthdate, LocalDateTime register_date, String uid) {
         this.name = name;
         this.lastname = lastname;
-        this.email = email;
-        this.password = password;
         this.about = about;
         this.education = education;
         this.location = location;
@@ -59,22 +58,6 @@ public class User {
         this.lastname = lastname;
     }
     
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-    
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getAbout() {
         return about;
     }
@@ -115,19 +98,19 @@ public class User {
         this.phone = phone;
     }
 
-    public String getBirthdate() {
+    public LocalDate getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(String birthdate) {
+    public void setBirthdate(LocalDate birthdate) {
         this.birthdate = birthdate;
     }
 
-    public String getRegister_date() {
+    public LocalDateTime getRegister_date() {
         return register_date;
     }
 
-    public void setRegister_date(String register_date) {
+    public void setRegister_date(LocalDateTime register_date) {
         this.register_date = register_date;
     }
 
@@ -136,8 +119,6 @@ public class User {
         return "User{" +
                 "name=" + name +
                 ", lastname='" + lastname + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
                 ", about='" + about + '\'' +
                 ", education='" + education + '\'' +
                 ", location='" + location + '\'' +
