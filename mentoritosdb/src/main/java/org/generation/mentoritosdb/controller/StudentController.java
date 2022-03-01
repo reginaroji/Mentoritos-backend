@@ -30,7 +30,7 @@ public class StudentController {
 	
 	@GetMapping
 	public List<Student> getStudents() {
-		System.out.println("Si está entrando a getStudents del controller");
+		//System.out.println("Si está entrando a getStudents del controller");
 		return studentService.getStudents();
 	}
 	

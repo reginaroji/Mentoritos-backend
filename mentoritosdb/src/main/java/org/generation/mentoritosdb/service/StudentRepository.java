@@ -7,6 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 public interface StudentRepository extends JpaRepository<Student, Long> {
-	@Query("SELECT s FROM Student s WHERE s.name=?1")
-	Optional<Student> findByName(String name);
+	@Query("SELECT s FROM Student s WHERE s.uid=?1")
+	Optional<Student> findByUID(String uid);
 }

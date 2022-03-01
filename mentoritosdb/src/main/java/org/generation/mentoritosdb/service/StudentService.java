@@ -34,9 +34,9 @@ public class StudentService {
 	}
 
 	public void addStudent(Student student) {
-		Optional<Student> studentByName = studentRepository.findByName(student.getName());
-		if(studentByName.isPresent()) { //isPresent pregunta si ya existe en la tabla este producto
-			throw new IllegalStateException("El estudiante con el nombre [" + student.getName() + "] ya existe.");
+		Optional<Student> studentByUID = studentRepository.findByUID(student.getUid());
+		if(studentByUID.isPresent()) { //isPresent pregunta si ya existe en la tabla este producto
+			throw new IllegalStateException("El estudiante con el nombre [" + student.getUid() + "] ya existe.");
 		}
 		else {
 			studentRepository.save(student);

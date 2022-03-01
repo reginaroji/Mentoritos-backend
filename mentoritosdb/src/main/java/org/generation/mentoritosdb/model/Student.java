@@ -56,9 +56,9 @@ public class Student {
 		return idStudent;
 	}
 	
-	public void setIdStudent() {
+	/*public void setIdStudent() {
 		this.idStudent = idStudent;
-	}
+	} */
 
 	public String getUid() {
 		return uid;
