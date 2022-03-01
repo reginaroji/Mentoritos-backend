@@ -1,5 +1,6 @@
 package org.generation.mentoritosdb.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,9 +18,9 @@ public class ScheduleService {
 		this.scheduleRepository = scheduleRepository;
 	}//constructor
 
-	public List<Schedule> getSchedule(Long idschedule) {
+	public Schedule getSchedule(Long idschedule) {
 		System.out.println("Si está entrando a getSchedule");
-		return scheduleRepository.findAll();
+		return scheduleRepository.findById(idschedule).orElseThrow(() -> new IllegalStateException("El horario con el id " + idschedule + " no existe."));
 	}//GET
 
 	public void deleteSchedule(Long idschedule) {
@@ -28,9 +29,9 @@ public class ScheduleService {
 	}//DELETE
 
 	public void addSchedule(Schedule schedule) {
-		Optional<Schedule> scheduleById = scheduleRepository.findById(schedule.getIdSchedule());
-		if(scheduleById.isPresent()) { //isPresent pregunta si ya existe en la tabla este producto
-			throw new IllegalStateException("El estudiante con el nombre [" + schedule.getIdSchedule() + "] ya existe.");
+		Optional<Schedule> scheduleByHour = scheduleRepository.findByHour(schedule.getHour());
+		if(scheduleByHour.isPresent()) { //isPresent pregunta si ya existe en la tabla este producto
+			throw new IllegalStateException("El horario [" + schedule.getHour() + "] ya existe.");
 		}//if
 		else {
 			scheduleRepository.save(schedule);
@@ -38,12 +39,12 @@ public class ScheduleService {
 	}//ADD
 
 	public void updateSchedule(Long idSchedule, 
-			int hour, 
+			LocalDateTime hour, 
 			//int idMentor, 
 			int dayWeek) {
 		if(scheduleRepository.existsById(idSchedule)) {
 			Schedule schedule = scheduleRepository.getById(idSchedule);
-			if (hour != 0) schedule.setHour(hour);
+			if (hour != null) schedule.setHour(hour);
 			//if (idMentor != 0) schedule.setIdMentor(idMentor);
 			if (dayWeek != 0) schedule.setDayWeek(dayWeek);
 			
@@ -55,6 +56,10 @@ public class ScheduleService {
 		}
 		
 	}//UPDATE
+
+	public List<Schedule> getSchedules(Long idschedule) {
+		return scheduleRepository.findAll();
+	}
 
 
 }//class ScheduleService

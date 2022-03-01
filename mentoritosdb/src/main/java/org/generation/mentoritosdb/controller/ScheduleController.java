@@ -1,10 +1,12 @@
 package org.generation.mentoritosdb.controller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.generation.mentoritosdb.model.Schedule;
 import org.generation.mentoritosdb.service.ScheduleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping (path="/api/schedule/")
+@CrossOrigin("*")
 public class ScheduleController {
 	private final ScheduleService scheduleService;
 	
@@ -25,8 +28,13 @@ public class ScheduleController {
 		System.out.println("Si está creando el objeto scheduleService");
 	}//ScheduleController
 	
+	@GetMapping
+	public List<Schedule> getSchedules(Long idschedule) {
+		return scheduleService.getSchedules(idschedule);
+	}//GET
+	
 	@GetMapping (path="{idSchedule}")
-	public List<Schedule> getSchedule(@PathVariable("idSchedule") Long idschedule) {
+	public Schedule getSchedule(@PathVariable("idSchedule") Long idschedule) {
 		return scheduleService.getSchedule(idschedule);
 	}//GET
 	
@@ -42,7 +50,7 @@ public class ScheduleController {
 	
 	@PutMapping (path="{idSchedule}")
 	public void updateSchedule(@PathVariable("idSchedule") Long idSchedule, 
-			int hour, 
+			LocalDateTime hour, 
 			int idMentor, 
 			int dayWeek) {
 		scheduleService.updateSchedule(idSchedule, 
