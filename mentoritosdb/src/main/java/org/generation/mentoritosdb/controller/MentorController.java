@@ -1,5 +1,7 @@
 package org.generation.mentoritosdb.controller;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.generation.mentoritosdb.model.Mentor;
@@ -16,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path="/getMentores/")
+@RequestMapping(path="/api/mentor/")
 public class MentorController {
 
 	private final MentorService mentorService;
@@ -57,8 +59,8 @@ public class MentorController {
 		@RequestParam(required=false) String location,
 		@RequestParam(required=false) String image_profile,
 		@RequestParam(required=false) String phone,
-		@RequestParam(required=false) String birthdate,
-		@RequestParam(required=false) String register_date,
+		@RequestParam(required=false) LocalDate birthdate,
+		@RequestParam(required=false) LocalDateTime register_date,
 		@RequestParam(required=false) String uid,
 		@RequestParam(required=false) Integer id_subject,
 		@RequestParam(required=false) String modality,
