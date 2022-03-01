@@ -1,5 +1,7 @@
 package org.generation.mentoritosdb.model;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,11 +19,11 @@ public class Mentorship {
     private Long id_mentorship;
     private Long id_schedule;
     private Long id_mentor;
-    private String datetime;
+    private LocalDateTime datetime;
     private Long id_student;
 
 
-    public Mentorship(Long id_mentorship, Long id_schedule, Long id_mentor, String datetime, Long id_student) {
+    public Mentorship(Long id_mentorship, Long id_schedule, Long id_mentor, LocalDateTime datetime, Long id_student) {
 		super();
 		this.id_mentorship = id_mentorship;
 		this.id_schedule = id_schedule;
@@ -58,11 +60,11 @@ public class Mentorship {
 		this.id_mentor = id_mentor;
 	}
 
-	public String getDatetime() {
+	public LocalDateTime getDatetime() {
 		return datetime;
 	}
 
-	public void setDatetime(String datetime) {
+	public void setDatetime(LocalDateTime datetime) {
 		this.datetime = datetime;
 	}
 
