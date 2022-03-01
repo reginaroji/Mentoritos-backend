@@ -20,13 +20,17 @@ public class Mentor extends User {
     private Integer id_subject;
     private String modality;
     private String video;
+    private Long price;
+    private String portfolio;
 
-    public Mentor(String name, String lastname, String email, String password, String about, String education, String location, String image_profile, String phone, LocalDate birthdate, LocalDateTime register_date, String uid, Integer id_mentor, Integer id_subject, String modality, String video) {
+    public Mentor(String name, String lastname, String email, String password, String about, String education, String location, String image_profile, String phone, LocalDate birthdate, LocalDateTime register_date, String uid, Integer id_mentor, Integer id_subject, String modality, String video, Long price, String portfolio) {
         super(name, lastname, about, education, location, image_profile, phone, birthdate, register_date, uid);
         this.id_mentor = id_mentor;
         this.id_subject = id_subject;
         this.modality = modality;
         this.video = video;
+        this.price = price;
+        this.portfolio = portfolio;
     }
 
     public Mentor() {
@@ -64,14 +68,26 @@ public class Mentor extends User {
     public void setVideo(String video) {
         this.video = video;
     }
+    
+    public Long getPrice() {
+		return price;
+	}
 
-    @Override
-    public String toString() {
-        return "Mentor{" +
-                "id_mentor=" + id_mentor +
-                ", id_subject=" + id_subject +
-                ", modality='" + modality + '\'' +
-                ", video='" + video + '\'' +
-                '}';
-    }
+	public void setPrice(Long price) {
+		this.price = price;
+	}
+
+	public String getPortfolio() {
+		return portfolio;
+	}
+
+	public void setPortfolio(String portfolio) {
+		this.portfolio = portfolio;
+	}
+
+	@Override
+	public String toString() {
+		return "Mentor [id_mentor=" + id_mentor + ", id_subject=" + id_subject + ", modality=" + modality + ", video="
+				+ video + ", price=" + price + ", portfolio=" + portfolio + "]";
+	}
 }
