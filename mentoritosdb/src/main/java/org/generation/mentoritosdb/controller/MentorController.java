@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path="/api/mentor/")
+@RequestMapping(path="/api/mentors/")
 public class MentorController {
 
 	private final MentorService mentorService;
@@ -50,6 +50,8 @@ public class MentorController {
 
 	@PutMapping(path = "{id_mentor}")
 	public void updateMentor(@PathVariable ("id_mentor") Integer id_mentor,
+		@RequestParam(required=false) Long price,
+		@RequestParam(required=false) String portfolio,
 		@RequestParam(required=false) String name,
 		@RequestParam(required=false) String lastname,
 		@RequestParam(required=false) String email,
@@ -66,7 +68,7 @@ public class MentorController {
 		@RequestParam(required=false) String modality,
 		@RequestParam(required=false) String video){
 			mentorService.updateMentor (id_mentor, name, lastname, email, password, about, education, location, image_profile, phone, birthdate,
-					register_date, uid, id_subject, modality, video);
+					register_date, uid, id_subject, modality, video, price, portfolio);
 		}
 
 	}

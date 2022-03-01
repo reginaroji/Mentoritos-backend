@@ -41,7 +41,7 @@ public class MentorService {
 		}//else //if				
 	}//addMentor
 
-	public void updateMentor(Integer id_mentor, String name, String lastname, String email, String password, String about, String education, String location, String image_profile, String phone, LocalDate birthdate, LocalDateTime register_date, String uid, Integer id_subject, String modality, String video) {
+	public void updateMentor(Integer id_mentor, String name, String lastname, String email, String password, String about, String education, String location, String image_profile, String phone, LocalDate birthdate, LocalDateTime register_date, String uid, Integer id_subject, String modality, String video, Long price, String portfolio) {
 		if (mentorRepository.existsById(id_mentor)) { 
 			Mentor m = mentorRepository.getById(id_mentor);
 			if (id_mentor != null) m.setId_mentor(id_mentor); 
@@ -57,7 +57,9 @@ public class MentorService {
 			if (uid != null) m.setuid(uid);
 			if (id_subject != null) m.setId_subject(id_subject);
 			if (modality != null) m.setModality(modality);
-			if (video != null) m.setVideo(video);			
+			if (video != null) m.setVideo(video);
+			if (price != null) m.setPrice(price);
+			if (portfolio != null) m.setPortfolio(portfolio);
 			mentorRepository.save(m);
 			
 		}else {
