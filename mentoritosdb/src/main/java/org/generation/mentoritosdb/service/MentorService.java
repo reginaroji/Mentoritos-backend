@@ -18,6 +18,7 @@ public class MentorService {
     }//constructor
 
     public List<Mentor> getMentores() {
+    	System.out.println("Get de mentores service");
         return mentorRepository.findAll(); 
     }
 
@@ -44,7 +45,6 @@ public class MentorService {
 	public void updateMentor(Integer id_mentor, String name, String lastname, String email, String password, String about, String education, String location, String image_profile, String phone, LocalDate birthdate, LocalDateTime register_date, String uid, Integer id_subject, String modality, String video, Long price, String portfolio) {
 		if (mentorRepository.existsById(id_mentor)) { 
 			Mentor m = mentorRepository.getById(id_mentor);
-			if (id_mentor != null) m.setId_mentor(id_mentor); 
 			if (name != null) m.setName(name); 
 			if (lastname != null) m.setLastname(lastname);
 			if (about != null) m.setAbout(about);

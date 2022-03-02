@@ -30,6 +30,7 @@ public class MentorController {
 
 	@GetMapping
 	public List<Mentor> getMentores(){
+		System.out.println("Get de mentores controller");
 		return mentorService.getMentores();
 	}
 
@@ -38,7 +39,7 @@ public class MentorController {
 		return mentorService.getMentor(id_mentor);
 	}//get mentor
 	
-	@GetMapping(path = "{uid_mentor}") 
+	@GetMapping(path = "uid/{uid_mentor}") 
 	public Mentor getMentorByUID(@PathVariable("uid_mentor") String uid_mentor){ 
 		return mentorService.getMentorByUID(uid_mentor);
 	}//get mentor

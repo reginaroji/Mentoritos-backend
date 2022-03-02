@@ -29,6 +29,7 @@ public class Student {
 	private String education;
 	private String interests;
 	private LocalDateTime registerDate;
+	private Long user_id;
 	
 	public Student() {
 		// Constructor vacío
@@ -36,7 +37,7 @@ public class Student {
 	
 	public Student(Long idStudent, String uid, String name, String lastname, LocalDate birthday, String location,
 			String phone, String imageProfile, String about, String education, String interests,
-			LocalDateTime registerDate) {
+			LocalDateTime registerDate, Long user_id) {
 		super();
 		this.idStudent = idStudent;
 		this.uid = uid;
@@ -50,8 +51,9 @@ public class Student {
 		this.education = education;
 		this.interests = interests;
 		this.registerDate = registerDate;
+		this.user_id = user_id;
 	}
-	
+
 	public Long getIdStudent() {
 		return idStudent;
 	}
@@ -148,19 +150,20 @@ public class Student {
 		this.registerDate = registration;
 	}
 
+	public Long getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(Long user_id) {
+		this.user_id = user_id;
+	}
+
 	@Override
 	public String toString() {
 		return "Student [idStudent=" + idStudent + ", uid=" + uid + ", name=" + name + ", lastname=" + lastname
 				+ ", birthday=" + birthday + ", location=" + location + ", phone=" + phone + ", imageProfile="
 				+ imageProfile + ", about=" + about + ", education=" + education + ", interests=" + interests
-				+ ", registerDate=" + registerDate + ", getIdStudent()=" + getIdStudent() + ", getUid()=" + getUid()
-				+ ", getName()=" + getName() + ", getLastname()=" + getLastname() + ", getBirthday()=" + getBirthday()
-				+ ", getLocation()=" + getLocation() + ", getPhone()=" + getPhone() + ", getImageProfile()="
-				+ getImageProfile() + ", getAbout()=" + getAbout() + ", getEducation()=" + getEducation()
-				+ ", getInterests()=" + getInterests() + ", getRegisterDate()=" + getRegisterDate() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+				+ ", registerDate=" + registerDate + ", user_id=" + user_id + "]";
 	}
-	
-	
 
 }

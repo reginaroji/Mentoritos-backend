@@ -39,6 +39,11 @@ public class UserController {
 		return userService.getProducto(prodId);
 	}// getProducto
 	
+	@GetMapping(path = "uid/{uid_user}") 
+	public User getUserByUID(@PathVariable("uid_user") String uid_user){ 
+		return userService.getUserByUID(uid_user);
+	}
+	
 	@DeleteMapping(path="{prodId}")
 	public void deleteProducto(@PathVariable("prodId") Long prodId) {
 		userService.deleteProducto(prodId);
