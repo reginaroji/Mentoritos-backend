@@ -12,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="mentor")
-public class Mentor extends User {
+public class Mentor extends UserMentor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_mentor", unique = true, nullable = false)

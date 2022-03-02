@@ -24,8 +24,8 @@ public class MentorshipController {
 	}//constructor
 	
 	@GetMapping
-	public List<Mentorship> getMentorship(){
-		return mentorshipService.getMentorship();
+	public List<Mentorship> getMentorships(){
+		return mentorshipService.getMentorships();
 	}// getMentorship
 	
 	@GetMapping(path="{id_mentorship}")
