@@ -1,6 +1,5 @@
 package org.generation.mentoritosdb.service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,7 +38,7 @@ public class ScheduleService {
 	}//ADD
 
 	public void updateSchedule(Long idSchedule, 
-			LocalDateTime hour, 
+			String hour, 
 			//int idMentor, 
 			int dayWeek) {
 		if(scheduleRepository.existsById(idSchedule)) {
