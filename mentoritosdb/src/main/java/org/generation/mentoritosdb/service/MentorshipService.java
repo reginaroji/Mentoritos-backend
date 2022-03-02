@@ -17,7 +17,7 @@ public class MentorshipService {
 		this.mentorshipRepository = mentorshipRepository;		
 	}//constructor
 
-	public List<Mentorship> getMentorship() {
+	public List<Mentorship> getMentorships() {
 		return mentorshipRepository.findAll();
 	}//getMentorship
 

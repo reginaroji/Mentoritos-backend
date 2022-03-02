@@ -1,132 +1,74 @@
 package org.generation.mentoritosdb.model;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-import javax.persistence.MappedSuperclass;
-
-@MappedSuperclass // ayuda a crear la herencia de la clase
+@Entity
+@Table(name="user")
 public class User {
-    private String  name;
-    private String lastname;
-    private String about;
-    private String education;
-    private String location;
-    private String image_profile;
-    private String phone;
-    private LocalDate birthdate;
-    private LocalDateTime register_date;
-    private String uid;
 
-    public User(String name, String lastname, String about, String education, String location, String image_profile, String phone, LocalDate birthdate, LocalDateTime register_date, String uid) {
-        this.name = name;
-        this.lastname = lastname;
-        this.about = about;
-        this.education = education;
-        this.location = location;
-        this.image_profile = image_profile;
-        this.phone = phone;
-        this.birthdate = birthdate;
-        this.register_date = register_date;
-        this.uid = uid;
-    }
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id", unique = true, nullable = false)
+	private int id;
+	private String email;
+	private String uid;
+	private String URL_Imagen;
 
-    public User() {
-    }
+	
+	public User(int id, String email, String uid, String uRL_Imagen) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.uid = uid;
+		URL_Imagen = uRL_Imagen;
 
-    public String getUid() {
-        return uid;
-    }
+	}
+	
+	public User() {
+		
+	}
 
-    public void setuid(String uid) {
-        this.uid = uid;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public String getLastname() {
-        return lastname;
-    }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-    
-    public String getAbout() {
-        return about;
-    }
+	public String getUid() {
+		return uid;
+	}
 
-    public void setAbout(String about) {
-        this.about = about;
-    }
+	public void setUid(String descripcion) {
+		this.uid = descripcion;
+	}
 
-    public String getEducation() {
-        return education;
-    }
+	public String getURL_Imagen() {
+		return URL_Imagen;
+	}
 
-    public void setEducation(String education) {
-        this.education = education;
-    }
+	public void setURL_Imagen(String uRL_Imagen) {
+		URL_Imagen = uRL_Imagen;
+	}
 
-    public String getLocation() {
-        return location;
-    }
+	@Override
+	public String toString() {
+		return "Producto [id=" + id + ", email=" + email + ", uid=" + uid + ", URL_Imagen="
+				+ URL_Imagen + "]";
+	}
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-
-    public String getImage_profile() {
-        return image_profile;
-    }
-
-    public void setImage_profile(String image_profile) {
-        this.image_profile = image_profile;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public LocalDate getBirthdate() {
-        return birthdate;
-    }
-
-    public void setBirthdate(LocalDate birthdate) {
-        this.birthdate = birthdate;
-    }
-
-    public LocalDateTime getRegister_date() {
-        return register_date;
-    }
-
-    public void setRegister_date(LocalDateTime register_date) {
-        this.register_date = register_date;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "name=" + name +
-                ", lastname='" + lastname + '\'' +
-                ", about='" + about + '\'' +
-                ", education='" + education + '\'' +
-                ", location='" + location + '\'' +
-                ", image_profile='" + image_profile + '\'' +
-                ", phone='" + phone + '\'' +
-                ", birthdate='" + birthdate + '\'' +
-                ", register_date='" + register_date + '\'' +
-                ", uid='" + uid + '\'' +
-                '}';
-    }
 }

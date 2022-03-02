@@ -78,6 +78,10 @@ public class StudentService {
 
 		
 	}
+
+	public Student getStudentByUID(String uidStudent) {
+		return studentRepository.findByUID(uidStudent).orElseThrow(() -> new IllegalMonitorStateException("EL estudiante con el uid : " + uidStudent + "no existe"));
+	}
 	
 	
 }

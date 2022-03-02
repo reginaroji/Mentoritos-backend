@@ -67,4 +67,8 @@ public class MentorService {
 			System.err.println("*No existe el id "+id_mentor);
 		}// if 		
 	} // updateMentor
+
+	public Mentor getMentorByUID(String uid_mentor) {
+		return mentorRepository.findByUID(uid_mentor).orElseThrow(() -> new IllegalMonitorStateException("EL Mentor con el uid : " + uid_mentor + "no existe"));
+	}
 }

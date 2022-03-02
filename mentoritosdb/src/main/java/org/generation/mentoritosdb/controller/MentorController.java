@@ -37,6 +37,11 @@ public class MentorController {
 	public Mentor getMentor(@PathVariable("id_mentor") Integer id_mentor){ 
 		return mentorService.getMentor(id_mentor);
 	}//get mentor
+	
+	@GetMapping(path = "{uid_mentor}") 
+	public Mentor getMentorByUID(@PathVariable("uid_mentor") String uid_mentor){ 
+		return mentorService.getMentorByUID(uid_mentor);
+	}//get mentor
 
 	@DeleteMapping(path = "{id_mentor}")
 	public void deleteMentor(@PathVariable("id_mentor") Integer id_mentor) {
