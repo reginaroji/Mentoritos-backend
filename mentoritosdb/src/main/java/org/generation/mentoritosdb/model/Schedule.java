@@ -1,5 +1,4 @@
 package org.generation.mentoritosdb.model;
-import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +14,7 @@ public class Schedule {
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
 	@Column (name = "idSchedule", unique = true, nullable = false)
 	private Long idSchedule;
-	private LocalDateTime hour;
+	private String hour;
 	private int idMentor;
 	private int dayWeek;
 	
@@ -23,7 +22,7 @@ public class Schedule {
 		
 	}// Constructor - EMPTY
 
-	public Schedule(Long idSchedule, LocalDateTime hour, int idMentor, int dayWeek) {
+	public Schedule(Long idSchedule, String hour, int idMentor, int dayWeek) {
 		super();
 		this.idSchedule = idSchedule;
 		this.hour = hour;
@@ -39,11 +38,11 @@ public class Schedule {
 		this.idSchedule = idSchedule;
 	}//setIdSchedule
 
-	public LocalDateTime getHour() {
+	public String getHour() {
 		return hour;
 	}//getHour
 
-	public void setHour(LocalDateTime hour) {
+	public void setHour(String hour) {
 		this.hour = hour;
 	}//setHour
 

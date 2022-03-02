@@ -1,6 +1,5 @@
 package org.generation.mentoritosdb.controller;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.generation.mentoritosdb.model.Schedule;
@@ -50,7 +49,7 @@ public class ScheduleController {
 	
 	@PutMapping (path="{idSchedule}")
 	public void updateSchedule(@PathVariable("idSchedule") Long idSchedule, 
-			LocalDateTime hour, 
+			String hour, 
 			int idMentor, 
 			int dayWeek) {
 		scheduleService.updateSchedule(idSchedule, 
