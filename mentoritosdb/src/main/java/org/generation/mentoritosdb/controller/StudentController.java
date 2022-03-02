@@ -39,7 +39,7 @@ public class StudentController {
 		return studentService.getStudent(idstudent);
 	}
 	
-	@GetMapping (path="{uidStudent}")
+	@GetMapping (path="uid/{uidStudent}")
 	public Student getStudentByUID(@PathVariable("uidStudent") String uidStudent) {
 		return studentService.getStudentByUID(uidStudent);
 	}

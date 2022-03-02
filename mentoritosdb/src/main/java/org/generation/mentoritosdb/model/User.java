@@ -14,13 +14,13 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id", unique = true, nullable = false)
-	private int id;
+	private Long id;
 	private String email;
 	private String uid;
 	private String URL_Imagen;
 
 	
-	public User(int id, String email, String uid, String uRL_Imagen) {
+	public User(Long id, String email, String uid, String uRL_Imagen) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -33,11 +33,11 @@ public class User {
 		
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

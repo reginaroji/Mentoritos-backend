@@ -22,18 +22,22 @@ public class Mentor extends UserMentor {
     private String video;
     private Long price;
     private String portfolio;
+    private Long user_id;
 
-    public Mentor(String name, String lastname, String email, String password, String about, String education, String location, String image_profile, String phone, LocalDate birthdate, LocalDateTime register_date, String uid, Integer id_mentor, Integer id_subject, String modality, String video, Long price, String portfolio) {
-        super(name, lastname, about, education, location, image_profile, phone, birthdate, register_date, uid);
-        this.id_mentor = id_mentor;
-        this.id_subject = id_subject;
-        this.modality = modality;
-        this.video = video;
-        this.price = price;
-        this.portfolio = portfolio;
-    }
+    public Mentor(String name, String lastname, String about, String education, String location, String image_profile,
+			String phone, LocalDate birthdate, LocalDateTime register_date, String uid, Integer id_mentor,
+			Integer id_subject, String modality, String video, Long price, String portfolio, Long user_id) {
+		super(name, lastname, about, education, location, image_profile, phone, birthdate, register_date, uid);
+		this.id_mentor = id_mentor;
+		this.id_subject = id_subject;
+		this.modality = modality;
+		this.video = video;
+		this.price = price;
+		this.portfolio = portfolio;
+		this.user_id = user_id;
+	}
 
-    public Mentor() {
+	public Mentor() {
 
     }
 
@@ -85,9 +89,19 @@ public class Mentor extends UserMentor {
 		this.portfolio = portfolio;
 	}
 
+	public Long getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(Long user_id) {
+		this.user_id = user_id;
+	}
+
 	@Override
 	public String toString() {
 		return "Mentor [id_mentor=" + id_mentor + ", id_subject=" + id_subject + ", modality=" + modality + ", video="
-				+ video + ", price=" + price + ", portfolio=" + portfolio + "]";
+				+ video + ", price=" + price + ", portfolio=" + portfolio + ", user_id=" + user_id + "]";
 	}
+	
+	
 }

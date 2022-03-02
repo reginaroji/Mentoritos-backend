@@ -56,5 +56,9 @@ public class UserService {
 		}// if 		
 		
 	} // updateProducto
+	
+	public User getUserByUID(String uidUser) {
+		return userRepository.findByUID(uidUser).orElseThrow(() -> new IllegalMonitorStateException("EL usuario con el uid : " + uidUser + "no existe"));
+	}
 
 }
