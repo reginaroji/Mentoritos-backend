@@ -15,14 +15,14 @@ public class Schedule {
 	@Column (name = "idSchedule", unique = true, nullable = false)
 	private Long idSchedule;
 	private String hour;
-	private int idMentor;
+	private Long idMentor;
 	private int dayWeek;
 	
 	public Schedule() {
 		
 	}// Constructor - EMPTY
 
-	public Schedule(Long idSchedule, String hour, int idMentor, int dayWeek) {
+	public Schedule(Long idSchedule, String hour, Long idMentor, int dayWeek) {
 		super();
 		this.idSchedule = idSchedule;
 		this.hour = hour;
@@ -46,11 +46,11 @@ public class Schedule {
 		this.hour = hour;
 	}//setHour
 
-	public int getIdMentor() {
+	public Long getIdMentor() {
 		return idMentor;
 	}//getIdMentor
 
-	public void setIdMentor(int idMentor) {
+	public void setIdMentor(Long idMentor) {
 		this.idMentor = idMentor;
 	}//setIdMentor
 

@@ -28,7 +28,7 @@ public class MentorshipService {
 	}//getMentorship
 
 	public void addMentorship(Mentorship mentorship) {
-		Optional<Mentorship> mentorshipByName =	mentorshipRepository.findByName(mentorship.getId_schedule(), mentorship.getId_mentor(), mentorship.getDatetime(), mentorship.getId_student());
+		Optional<Mentorship> mentorshipByName =	mentorshipRepository.findByName(mentorship.getId_schedule(), mentorship.getId_mentor(), mentorship.getDay_week(), mentorship.getId_student(), mentorship.getHour());
 		if (mentorshipByName.isPresent()) {	
 			throw new IllegalStateException ("Mentorship ya existe");
 		}else {

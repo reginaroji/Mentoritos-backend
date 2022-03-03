@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface MentorshipRepository extends JpaRepository<Mentorship, Long> {
 	@Query("SELECT ms FROM Mentorship ms WHERE ms.id_schedule=?1")
-	Optional<Mentorship> findByName (Long id_schedule, Long id_mentor, LocalDateTime datetime, Long id_student);
+	Optional<Mentorship> findByName (Long id_schedule, Long id_mentor, int day_week, Long id_student, String hour);
 
 }

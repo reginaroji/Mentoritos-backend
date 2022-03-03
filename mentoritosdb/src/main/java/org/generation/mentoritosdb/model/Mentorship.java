@@ -19,17 +19,21 @@ public class Mentorship {
     private Long id_mentorship;
     private Long id_schedule;
     private Long id_mentor;
-    private LocalDateTime datetime;
+    private int day_week;
     private Long id_student;
-
-
-    public Mentorship(Long id_mentorship, Long id_schedule, Long id_mentor, LocalDateTime datetime, Long id_student) {
+    private Long id_subject;
+    private String hour;
+    
+	public Mentorship(Long id_mentorship, Long id_schedule, Long id_mentor, int day_week, Long id_student,
+			Long id_subject, String hour) {
 		super();
 		this.id_mentorship = id_mentorship;
 		this.id_schedule = id_schedule;
 		this.id_mentor = id_mentor;
-		this.datetime = datetime;
+		this.day_week = day_week;
 		this.id_student = id_student;
+		this.id_subject = id_subject;
+		this.hour = hour;
 	}
 
 	public Mentorship() {
@@ -60,12 +64,28 @@ public class Mentorship {
 		this.id_mentor = id_mentor;
 	}
 
-	public LocalDateTime getDatetime() {
-		return datetime;
+	public int getDay_week() {
+		return day_week;
 	}
 
-	public void setDatetime(LocalDateTime datetime) {
-		this.datetime = datetime;
+	public void setDay_week(int day_week) {
+		this.day_week = day_week;
+	}
+
+	public Long getId_subject() {
+		return id_subject;
+	}
+
+	public void setId_subject(Long id_subject) {
+		this.id_subject = id_subject;
+	}
+
+	public String getHour() {
+		return hour;
+	}
+
+	public void setHour(String hour) {
+		this.hour = hour;
 	}
 
 	public Long getId_student() {
@@ -79,9 +99,8 @@ public class Mentorship {
 	@Override
 	public String toString() {
 		return "Mentorship [id_mentorship=" + id_mentorship + ", id_schedule=" + id_schedule + ", id_mentor="
-				+ id_mentor + ", datetime=" + datetime + ", id_student=" + id_student + "]";
+				+ id_mentor + ", day_week=" + day_week + ", id_student=" + id_student + ", id_subject=" + id_subject
+				+ ", hour=" + hour + "]";
 	}
-	
-	
 	
 }
